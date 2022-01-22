@@ -16,7 +16,7 @@ from pyrogram import emoji
 from pyrogram.errors import StickersetInvalid, YouBlockedUser
 from pyrogram.raw.functions.messages import GetStickerSet
 from pyrogram.raw.types import InputStickerSetShortName
-from kingbot import kingbot, vr , Adminsettings
+from RaiChUB import RaiChUB, vr , Adminsettings
 from utilss.paste import get_text
 from utilss.vitoo import run_cmd
 from pyrogram import filters
@@ -64,7 +64,7 @@ async def convert_to_image(message, client) -> [None, str]:
         vid_path = await client.download_media(message.reply_to_message)
         await run_cmd(f"ffmpeg -i {vid_path} -filter:v scale=500:500 -an {final_path}")
     return final_path
-@kingbot.on_message(filters.command("packinfo", vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("packinfo", vr.get("HNDLR")) & filters.user(Adminsettings))
 async def packinfo(client, message):
     rep = await message.edit_text("`Processing...`")
     if not message.reply_to_message:
@@ -99,7 +99,7 @@ async def packinfo(client, message):
     await rep.edit(output)
 
 
-@kingbot.on_message(filters.command("kang", vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("kang", vr.get("HNDLR")) & filters.user(Adminsettings))
 async def packinfo(client, message):
     rep= await message.edit_text("`Using Megic To Kang This Sticker...`")
     if not message.reply_to_message:
@@ -115,7 +115,7 @@ async def packinfo(client, message):
     else:
         name = message.from_user.first_name
     packname = f"@{nm} Kang Pack {pack}"
-    packshortname = f"KING_{message.from_user.id}_{pack}"
+    packshortname = f"RaiChu_{message.from_user.id}_{pack}"
     non = [None, "None"]
     emoji = "🤴"
     try:
@@ -177,7 +177,7 @@ async def packinfo(client, message):
             prev_pack = int(pack) - 1
             await rep.edit(f"Kang Pack Vol __{prev_pack}__ is Full! Switching To Vol __{pack}__ Kang Pack")
             packname = f"@{nm} Kang Pack {pack}"
-            packshortname = f"FRIDAY_{message.from_user.id}_{pack}"
+            packshortname = f"RAICHU_{message.from_user.id}_{pack}"
             if is_anim:
                 packshortname += "_animated"
                 packname += " Animated"
@@ -259,7 +259,7 @@ def resize_image(image):
         im = im.resize(sizenew)
     else:
         im.thumbnail(maxsize)
-    file_name = "Sticker_FridayUB.png"
+    file_name = "Sticker_RaiChUB.png"
     im.save(file_name, "PNG")
     if os.path.exists(image):
         os.remove(image)
