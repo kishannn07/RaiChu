@@ -2,7 +2,7 @@ from pyrogram import client, filters
 import asyncio
 import time
 from pyrogram.types import ChatPermissions
-from kingbot import kingbot, vr ,Adminsettings
+from RaiChUB import RaiChUB, vr ,Adminsettings
 __MODULE__ = "info"
 __HELP__ = """
 __**This command helps you to get info of a user in the chat**__
@@ -10,7 +10,7 @@ __**This command helps you to get info of a user in the chat**__
 -> `info`
 """
 
-@kingbot.on_message(filters.group & filters.command("info",vr.get("HNDLR")) & filters.user(Adminsettings))  
+@RaiChUB.on_message(filters.group & filters.command("info",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def info(_, message):
     if message.reply_to_message:
         username = message.reply_to_message.from_user.username
