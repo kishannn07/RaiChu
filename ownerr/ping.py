@@ -1,5 +1,5 @@
 from pyrogram import filters, Client
-from RaiChUB import RaiChUB, Adminsettings,vr, starttimer
+from RaiChUB import RaiChUB, Adminsettings,vr, starttimer, HNDLR
 from datetime import datetime
 
 __MODULE__ = "PING"
@@ -8,7 +8,7 @@ __**This command helps you to instantly get the ping of the userbot**__
 ──「 **Usage** 」──
 -> `ping`
 """
-@RaiChUB.on_message(filters.command("ping",vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("ping",("HNDLR")) & filters.user(Adminsettings))
 async def pinger(_, message):
     start = datetime.now()
     end = datetime.now()
