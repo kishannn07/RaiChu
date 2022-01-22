@@ -2,7 +2,7 @@ from pyrogram import client, filters
 import asyncio
 import time
 from pyrogram.types import ChatPermissions
-from kingbot import kingbot, vr ,Adminsettings
+from RaiChUB import RaiChUB, vr ,Adminsettings
 __MODULE__ = "pin"
 __HELP__ = """
 __**This command helps you to instantly pin a message in the chat**__
@@ -10,7 +10,7 @@ __**This command helps you to instantly pin a message in the chat**__
 -> `pin`
 """
 
-@kingbot.on_message(filters.command("pin",vr.get("HNDLR")) & filters.user(Adminsettings))  
+@RaiChUB.on_message(filters.command("pin",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def pin_message(_, message):
     msg_id=message.message_id
     chat_id=message.chat.id
