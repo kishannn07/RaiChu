@@ -11,7 +11,7 @@ from pyrogram.types import (
     Message)
 from sql_helper.gbandb import gban_info, gban_list, gban_user, ungban_user
 from sql_helper.gmutedb import gmute, is_gmuted, ungmute
-from kingbot import kingbot, setbot , vr, Adminsettings
+from RaiChUB import RaiChUB, setbot , vr, Adminsettings
 __MODULE__ = "Gban"
 __HELP__ = """**This command helps you to instantly Gban a user in the chat**
 -> `gban` `ungban` `gmute` `ungmute` `gbanlist` `gcast`
@@ -91,7 +91,7 @@ def get_text(message: Message) -> [None, str]:
         return None
 
 
-@kingbot.on_message(filters.user(Adminsettings) & filters.command("gmute", vr.get("HNDLR")))
+@RaiChUB.on_message(filters.user(Adminsettings) & filters.command("gmute", vr.get("HNDLR")))
 async def gmute_him(client, message):
     g = await message.edit_text("`Processing..`")
     text_ = get_text(message)
@@ -119,7 +119,7 @@ async def gmute_him(client, message):
     
 
 
-@kingbot.on_message(filters.user(Adminsettings) & filters.command("ungmute", vr.get("HNDLR")))
+@RaiChUB.on_message(filters.user(Adminsettings) & filters.command("ungmute", vr.get("HNDLR")))
 async def gmute_him(client, message):
     ug = await message.edit_text("`Processing..`")
     text_ = get_text(message)
@@ -145,7 +145,7 @@ async def gmute_him(client, message):
    
 
 
-@kingbot.on_message(filters.user(Adminsettings) & filters.command("gban", vr.get("HNDLR")))
+@RaiChUB.on_message(filters.user(Adminsettings) & filters.command("gban", vr.get("HNDLR")))
 async def gbun_him(client, message):
     gbun = await message.edit_text("`Processing..`")
     text_ = get_text(message)
@@ -185,7 +185,7 @@ async def gbun_him(client, message):
     await gbun.edit(gbanned)
     
 
-@kingbot.on_message(filters.user(Adminsettings) & filters.command("ungban", vr.get("HNDLR")))
+@RaiChUB.on_message(filters.user(Adminsettings) & filters.command("ungban", vr.get("HNDLR")))
 async def ungbun_him(client, message):
     ungbun= await message.edit_text("`Processing..`")
     text_ = get_text(message)
@@ -224,7 +224,7 @@ async def ungbun_him(client, message):
     
 
 
-@kingbot.on_message( ~filters.me & filters.incoming)
+@RaiChUB.on_message( ~filters.me & filters.incoming)
 async def watch(client, message):
     if not message:
         return
@@ -256,7 +256,7 @@ async def watch(client, message):
     
 
 
-@kingbot.on_message(filters.user(Adminsettings) & filters.command("gbanlist", vr.get("HNDLR")))
+@RaiChUB.on_message(filters.user(Adminsettings) & filters.command("gbanlist", vr.get("HNDLR")))
 async def give_glist(client, message):
     oof = "**#GBanList** \n\n"
     glist = await message.edit_text("`Processing..`")
@@ -269,7 +269,7 @@ async def give_glist(client, message):
     await edit_or_send_as_file(oof, glist, client, "GbanList", "Gban-List")
 
 
-@kingbot.on_message(filters.user(Adminsettings) & filters.command("gcast", vr.get("HNDLR")))
+@RaiChUB.on_message(filters.user(Adminsettings) & filters.command("gcast", vr.get("HNDLR")))
 async def gbroadcast(client, message):
     msg_ = await message.edit_text("`Processing..`")
     failed = 0
