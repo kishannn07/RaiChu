@@ -16,9 +16,9 @@ async def stats(_, message):
     c = 0
     b = 0
     a_chat = 0
-    Meh=await kingbot.get_me()
+    Meh=await RaiChUB.get_me()
     group = ["supergroup", "group"]
-    async for dialog in kingbot.iter_dialogs():
+    async for dialog in RaiChUB.iter_dialogs():
         if dialog.chat.type == "private":
             u += 1
         elif dialog.chat.type == "bot":
