@@ -11,7 +11,7 @@ from pyrogram.errors import (
     UserAdminInvalid,
     FloodWait,
 )
-from kingbot import kingbot, vr ,Adminsettings
+from RaiChUB import RaiChUB, vr ,Adminsettings
 __MODULE__ = "promote"
 __HELP__ = """
 __**This command helps you to instantly promote someone in the chat**__
@@ -19,7 +19,7 @@ __**This command helps you to instantly promote someone in the chat**__
 -> `promote`
 """
 
-@kingbot.on_message(filters.group & filters.command("promote",vr.get("HNDLR")) & filters.user(Adminsettings))  
+@RaiChUB.on_message(filters.group & filters.command("promote",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def promotte(client, message):
   if message.chat.type in ["group", "supergroup"]:
     cmd = message.command
