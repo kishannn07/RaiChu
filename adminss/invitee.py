@@ -1,6 +1,6 @@
 from pyrogram import filters
 from pyrogram.types import Message
-from kingbot import kingbot, setbot , vr , Adminsettings
+from RaiChUB import RaiChUB, setbot , vr , Adminsettings
 import asyncio
 __MODULE__ = "invite"
 __HELP__ = """
@@ -8,7 +8,7 @@ __HELP__ = """
 __**This command helps you to invite members in a chat**__
 ──「 **Usage** 」──
 """
-@kingbot.on_message(filters.user(Adminsettings) & filters.command("invite", vr.get("HNDLR")))
+@RaiChUB.on_message(filters.user(Adminsettings) & filters.command("invite", vr.get("HNDLR")))
 async def inviteee(client, message):
     mg = await message.edit_text("`Adding Users!`")
     user_s_to_add = message.text.split(" ",1)[1]
