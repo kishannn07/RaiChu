@@ -2,7 +2,7 @@ from pyrogram import client, filters
 import asyncio
 import time
 from pyrogram.types import ChatPermissions
-from kingbot import kingbot, vr ,Adminsettings
+from RaiChUB import RaiChUB, vr ,Adminsettings
 __MODULE__ = "unmute"
 __HELP__ = """
 __**This command helps you to unmute a user in the chat**__
@@ -23,7 +23,7 @@ unmute_permissions = ChatPermissions(
     can_pin_messages=False,
 )
 
-@kingbot.on_message(filters.group & filters.command("unmute",vr.get("HNDLR")) & filters.user(Adminsettings))  
+@RaiChUB.on_message(filters.group & filters.command("unmute",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def unmute(client, message):
     if message.chat.type in ["group", "supergroup"]:
         me_m =await client.get_me()
