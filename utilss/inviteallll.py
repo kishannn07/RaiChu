@@ -17,12 +17,12 @@ async def hikjgakd(_, message):
        else:
           trgt= idoun.strip()
     i=0
-    async for memb in kingbot.iter_chat_members(trgt):
+    async for memb in RaiChUB.iter_chat_members(trgt):
       membe= memb.user
       membid= membe.id
       await mg.edit(f"trying to add{membe.mention}")
       try:
-        await kingbot.add_chat_members(message.chat.id, membid)
+        await RaiChUB.add_chat_members(message.chat.id, membid)
         i= i+1
       except UserPrivacyRestricted:
         continue
