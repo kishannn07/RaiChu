@@ -2,7 +2,7 @@ from pyrogram import client, filters
 import asyncio
 import time
 from pyrogram.types import ChatPermissions
-from kingbot import kingbot, vr ,Adminsettings
+from RaiChUB import RaiChUB, vr ,Adminsettings
 __MODULE__ = "purge"
 __HELP__ = """
 __**This command helps you to delete all messages from a replied message in the chat**__
@@ -10,7 +10,7 @@ __**This command helps you to delete all messages from a replied message in the 
 -> `purge`
 """
 
-@kingbot.on_message(filters.command("purge",vr.get("HNDLR")) & filters.user(Adminsettings))  
+@RaiChUB.on_message(filters.command("purge",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def purge(client, message):
     start_time = time.time()
     message_ids = []
