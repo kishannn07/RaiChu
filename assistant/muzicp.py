@@ -1,5 +1,5 @@
 import ffmpeg
-from kingbot import vcbot, setbot , Adminsettings
+from RaiChUB import vcbot, setbot , Adminsettings
 from pytgcalls import GroupCall
 import asyncio
 import os
