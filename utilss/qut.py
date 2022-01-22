@@ -1,10 +1,10 @@
-from kingbot import kingbot , vr , Adminsettings, setbot
+from RaiChUB import RaiChUB , vr , Adminsettings, setbot
 from utilss.vitoo import run_cmd
 from utilss.paste import get_text
 import asyncio
 from pyrogram import filters
 
-@kingbot.on_message(filters.command("qt", vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("qt", vr.get("HNDLR")) & filters.user(Adminsettings))
 async def nice_qbot(client, message):
     m = await message.edit_text("`Making A Quote.`")
     query = get_text(message)
