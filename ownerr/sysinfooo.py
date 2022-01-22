@@ -10,13 +10,13 @@ from os import environ, execle, path, remove
 import psutil
 from pyrogram import __version__
 from pyrogram import filters
-from kingbot import kingbot , vr , Adminsettings
+from RaiChUB import RaiChUB , vr , Adminsettings
 __MODULE__ = "System"
 __HELP__ = """**This command helps you to Bot System**
 -> `sysinfo` `restart`
 """
 
-@kingbot.on_message(filters.command("sysinfo",vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("sysinfo",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def pijhaau(_ , message):
     splatform = platform.system()
     platform_release = platform.release()
@@ -32,7 +32,7 @@ async def pijhaau(_ , message):
         cpu_freq = f"{round(cpu_freq / 1000, 2)}GHz"
     else:
         cpu_freq = f"{round(cpu_freq, 2)}MHz"
-    du = psutil.disk_usage(kingbot.workdir)
+    du = psutil.disk_usage(RaiChUB.workdir)
     psutil.disk_io_counters()
     disk = f"{du.used} / {du.total} " f"({du.percent}%)"
     cpu_len = len(psutil.Process().cpu_affinity())
@@ -52,10 +52,10 @@ async def pijhaau(_ , message):
 **DISK :** `{disk}`
     """
     await message.edit_text(res)
-@kingbot.on_message(filters.command("restart",vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("restart",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def pijgsku(_ , message):
     await message.edit_text("` Restarting... 🤯🤯`")
-    args = [sys.executable, "-m", "kingbot"]
+    args = [sys.executable, "-m", "RaiChUB"]
     execle(sys.executable, *args, environ)
     exit()
     return
