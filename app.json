@@ -1,5 +1,5 @@
 {
-    "name": "King UserBot",
+    "name": "RaiChUB",
     "description": "Pluggable telegram userbot, made in python using pyrogram.",
     "logo": "https://telegra.ph/file/fcacda62a46f47b90b7d4.jpg",
     "keywords": [
@@ -11,7 +11,7 @@
         "king"
     ],
     "repository": "",
-    "success_url": "https://t.me/devilcodes_network",
+    "success_url": "https://t.me/OfficialShield",
     "stack": "container",
     "env": {
         "API_ID": {
