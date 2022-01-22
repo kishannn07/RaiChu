@@ -1,7 +1,7 @@
 from pyrogram import client, filters
 import asyncio
 import time
-from kingbot import kingbot, vr ,Adminsettings
+from RaiChUB import RaiChUB, vr ,Adminsettings
 __MODULE__ = "setvar"
 __HELP__ = """
 __**This command helps you to set var**__
@@ -9,7 +9,7 @@ __**This command helps you to set var**__
 -> `setvar`
 """
 Vari=["HNDLR","VC_SESSION", "VC_API_ID" ,"VC_API_HASH"]
-@kingbot.on_message(filters.command("setvar",vr.get("HNDLR")) & filters.user(Adminsettings))  
+@RaiChUB.on_message(filters.command("setvar",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def varistr(_, message):
   msg_txt=message.text
   if " " in msg_txt:
