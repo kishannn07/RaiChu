@@ -18,7 +18,7 @@ async def invite_link(client, message):
     if message.chat.type in ["group", "supergroup"]:
         chat_name = message.chat.title
         try:
-                link = await kingbot.export_chat_invite_link(message.chat.id)
+                link = await RaiChUB.export_chat_invite_link(message.chat.id)
                 await message.reply_text(f"The invite link for chat is {link}")
         except Exception as e:
                 print(e)
