@@ -23,10 +23,10 @@ async def delete_user_history(_ , message):
         username=chat_msg[index+1:len(chat_msg)]
     else:                   
         username=message.reply_to_message.from_user.id
-    zuzu= await kingbot.get_chat_member(chat_id , "me")
+    zuzu= await RaiChUB.get_chat_member(chat_id , "me")
     can_delete=zuzu.can_delete_messages
     if(can_delete):      
-        await kingbot.delete_user_history(chat_id , username)
+        await RaiChUB.delete_user_history(chat_id , username)
     else:
         reply_string="Noob,you can't delete their existence !"
-        await kingbot.edit_message_text(chat_id , msg_id , reply_string )
+        await RaiChUB.edit_message_text(chat_id , msg_id , reply_string )
