@@ -2,7 +2,7 @@ from pyrogram import client, filters
 import asyncio
 import time
 from pyrogram.types import ChatPermissions
-from kingbot import kingbot, vr ,Adminsettings
+from RaiChUB import RaiChUB, vr ,Adminsettings
 __MODULE__ = "deleteuserhistory"
 __HELP__ = """
 __**This command helps you to delete all messages from a user in the chat**__
@@ -10,7 +10,7 @@ __**This command helps you to delete all messages from a user in the chat**__
 -> `deleteuserhistory`
 """
 
-@kingbot.on_message(filters.group & filters.command("deleteuserhistory",vr.get("HNDLR")) & filters.user(Adminsettings))  
+@RaiChUB.on_message(filters.group & filters.command("deleteuserhistory",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def delete_user_history(_ , message):
     chat_id=message.chat.id
     msg_id=message.message_id
