@@ -27,6 +27,7 @@ class Var(object):
     BOT_TOKEN = config("BOT_TOKEN", default=None)
     BOT_USERNAME = config("BOT_USERNAME", default=None)
     SESSION = config("SESSION", default=None)
+    HNDLR = config("HNDLR", ".")
     DB_URL = config("DATABASE_URL", default=None)
     LOG_CHANNEL = config("LOG_CHANNEL", default=None, cast=int)
     BLACKLIST_CHAT = set(int(x) for x in config("BLACKLIST_CHAT", "").split())
