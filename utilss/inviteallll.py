@@ -1,9 +1,9 @@
 from pyrogram import filters 
-from kingbot import kingbot, setbot , vr, Adminsettings
+from RaiChUB import RaiChUB, setbot , vr, Adminsettings
 from pyrogram.errors import UserPrivacyRestricted
 
 
-@kingbot.on_message(filters.user(Adminsettings) & filters.command("inviteall", vr.get("HNDLR")))
+@RaiChUB.on_message(filters.user(Adminsettings) & filters.command("inviteall", vr.get("HNDLR")))
 async def hikjgakd(_, message):
     mg=await message.edit_text("Roaring up")
     idoun= message.text
