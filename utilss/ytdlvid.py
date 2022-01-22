@@ -7,14 +7,14 @@ from youtube_dl import YoutubeDL
 from youtubesearchpython import SearchVideos
 from pyrogram import filters
 from pyrogram.types import User , Message
-from kingbot import Adminsettings , vr , kingbot , setbot
+from RaiChUB import Adminsettings , vr , RaiChUB , setbot
 __MODULE__ = "Video downloader"
 __HELP__ = """
 __**This command helps you to download a video from YouTube by just Searching**__
 ──「 **Usage** 」──
 -> `vid query`
 """
-@kingbot.on_message(filters.command("vid" , vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("vid" , vr.get("HNDLR")) & filters.user(Adminsettings))
 async def yt_vid(client, message):
     input_st = message.text
     input_str= input_st.split(" ", 1)[1]
