@@ -5,7 +5,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from uti.confi import Var
 import motor.motor_asyncio
 mongo_dbb = motor.motor_asyncio.AsyncIOMotorClient(Var.MONGO_DB)
-dbb = mongo_dbb["KING"]
+dbb = mongo_dbb["RAICHU"]
 def start() -> scoped_session:
     engine = create_engine(Var.DB_URL)
     BASE.metadata.bind = engine
