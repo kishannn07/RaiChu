@@ -2,7 +2,7 @@ from pyrogram import client, filters
 import asyncio
 import time
 from pyrogram.types import ChatPermissions
-from kingbot import kingbot, vr ,Adminsettings
+from RaiChUB import RaiChUB, vr ,Adminsettings
 __MODULE__ = "speedtest"
 __HELP__ = """
 __**This command helps you to get speed of your connection**__
@@ -10,7 +10,7 @@ __**This command helps you to get speed of your connection**__
 -> `speedtest`
 """
 
-@kingbot.on_message(filters.command("speedtest",vr.get("HNDLR")) & filters.user(Adminsettings))  
+@RaiChUB.on_message(filters.command("speedtest",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def speedtest(_ , message):
     await message.reply("Processing ...")
     import speedtest
