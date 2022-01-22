@@ -4,7 +4,7 @@ import asyncio
 import shlex
 import sys
 from pyrogram import filters
-from kingbot import kingbot , vr , Adminsettings
+from RaiChUB import RaiChUb , vr , Adminsettings
 from pymediainfo import MediaInfo
 from typing import Tuple
 __MODULE__ = "Convert"
@@ -42,7 +42,7 @@ async def run_cmd(cmd: str) -> Tuple[str, str, int, int]:
         process.returncode,
         process.pid,
     )
-@kingbot.on_message(filters.command("subtitle",vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("subtitle",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def pijtkiau(_ , message):
     msg_ = await message.edit_text("`wait bruh`")
     if not message.reply_to_message:
@@ -63,7 +63,7 @@ async def pijtkiau(_ , message):
         return
     await msg_.edit("`Almost Done! Now Uploading Srt File!`")
     if message.reply_to_message:
-        await kingbot.send_document(
+        await RaiChUB.send_document(
             message.chat.id,
             srt_file_name,
             caption=f">> {file_name} <<",
@@ -79,7 +79,7 @@ async def pijtkiau(_ , message):
             os.remove(files)
 
 
-@kingbot.on_message(filters.command("ffwd",vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("ffwd",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def prtaiyau(_ , message):
     msg_ = await message.edit_text("`Brewing`")
     if not message.reply_to_message:
@@ -97,13 +97,13 @@ async def prtaiyau(_ , message):
         await msg_.edit("`The magic potion failed`")
         return
     if message.reply_to_message:
-        await kingbot.send_video(
+        await RaiChUB.send_video(
             message.chat.id,
             file_name,
             reply_to_message_id=message.reply_to_message.message_id,
             )
     else:
-        await kingbot.send_video(
+        await RaiChUB.send_video(
             message.chat.id,
             file_name
              )
@@ -113,7 +113,7 @@ async def prtaiyau(_ , message):
             os.remove(files)
 
 
-@kingbot.on_message(filters.command("slwdwn",vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("slwdwn",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def piljhsiau(_ , message):
     msg_ = await message.edit_text("`Prepping`")
     if not message.reply_to_message:
@@ -131,13 +131,13 @@ async def piljhsiau(_ , message):
         await msg_.edit("`Prep failed`")
         return
     if message.reply_to_message:
-        await kingbot.send_video(
+        await RaiChUB.send_video(
             message.chat.id,
             file_name,
             reply_to_message_id=message.reply_to_message.message_id
             )
     else:
-        await kingbot.send_video(
+        await RaiChUB.send_video(
             message.chat.id,
             file_name
             )
@@ -146,7 +146,7 @@ async def piljhsiau(_ , message):
         if files and os.path.exists(files):
             os.remove(files)
 
-@kingbot.on_message(filters.command("vidnot",vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("vidnot",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def pijtkiau(_ , message):
     msg_ = await message.edit_text("`Making your wish come true`")
     if not message.reply_to_message:
@@ -163,13 +163,13 @@ async def pijtkiau(_ , message):
         await msg_.edit("`Sed magic may be a dream`")
         return
     if message.reply_to_message:
-        await kingbot.send_video_note(
+        await RaiChUB.send_video_note(
             message.chat.id,
             file_name,
             reply_to_message_id=message.reply_to_message.message_id,
         )
     else:
-        await kingbot.send_video_note(
+        await RaiChUB.send_video_note(
             message.chat.id,
             file_name
             )
