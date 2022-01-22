@@ -10,12 +10,12 @@ __HELP__ = """**This command helps you to Repo**
 @RaiChUB.on_message(filters.user(Adminsettings) & filters.command("repo", vr.get("HNDLR")))
 async def hikjbhgakd(_, message):
   booet= await setbot.get_me()
-  res=await kingbot.get_inline_bot_results(booet.username, "repo")
-  mg= await kingbot.send_inline_bot_result(message.chat.id, res.query_id, res.results[0].id)
+  res=await RaiChUB.get_inline_bot_results(booet.username, "repo")
+  mg= await RaiChUB.send_inline_bot_result(message.chat.id, res.query_id, res.results[0].id)
   message.delete()
 @setbot.on_inline_query(filters.regex("repo"))
 async def ibnrp(_ , inline_query):
-  stosen= InputTextMessageContent(message_text=f"𝙂𝙚𝙩 𝙮𝙤𝙪𝙧𝙨𝙚𝙡𝙛 𝙖 𝙠𝙞𝙣𝙜 𝙪𝙨𝙚𝙧𝙗𝙤𝙩\n 𝐿𝑖𝑔ℎ𝑡 𝑦𝑒𝑎𝑟𝑠 𝑎ℎ𝑒𝑎𝑑")
+  stosen= InputTextMessageContent(message_text=f"𝙂𝙚𝙩 𝙮𝙤𝙪𝙧𝙨𝙚𝙡𝙛 𝙖 𝙍𝙖𝙞𝘾𝙝𝙐𝘽\n 𝐿𝑖𝑔ℎ𝑡 𝑦𝑒𝑎𝑟𝑠 𝑎ℎ𝑒𝑎𝑑")
   keboard= InlineKeyboardMarkup(
                   [  [
                         InlineKeyboardButton(
