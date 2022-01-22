@@ -3,7 +3,7 @@ import asyncio
 import random, re
 from collections import deque
 import importlib.util
-from RaiChUB import kingbot, vr ,Adminsettings
+from RaiChUB import RaiChUB, vr ,Adminsettings
 import random
 DEFAULTUSER = "RaiChu"
 __MODULE__ = "Animation"
