@@ -3,15 +3,15 @@ import asyncio
 import random, re
 from collections import deque
 import importlib.util
-from kingbot import kingbot, vr ,Adminsettings
+from RaiChUB import kingbot, vr ,Adminsettings
 import random
-DEFAULTUSER = "King"
+DEFAULTUSER = "RaiChu"
 __MODULE__ = "Animation"
 __HELP__ = """**This command helps you animation**
 -> `brain` `bomb` `call` `kill` `wtf` `ding` `charging` `hypo` `gangsta`
 """
 
-@kingbot.on_message(filters.command("brain",vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("brain",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def pijtau(_ , message):
     if message.forward_from:
         return
@@ -39,7 +39,7 @@ async def pijtau(_ , message):
             await asyncio.sleep(animation_interval)
             await message.edit(animation_chars[i %14 ])
 		
-@kingbot.on_message(filters.command("bomb",vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("bomb",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def gahite(_ ,message):
     if message.forward_from:
         return
@@ -64,7 +64,7 @@ async def gahite(_ ,message):
     await message.edit("`RIP PLOXXX......`")
     await asyncio.sleep(2)
    
-@kingbot.on_message(filters.command("call",vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("call",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def hajqag(_, message):
     if message.forward_from:
         return
@@ -97,7 +97,7 @@ async def hajqag(_, message):
             await message.edit(animation_chars[i % 18])
             
            
-@kingbot.on_message(filters.command("kill",vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("kill",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def gahah(_,message):
     if message.forward_from:
         return
@@ -124,7 +124,7 @@ async def gahah(_,message):
             await message.edit(animation_chars[i % 12])
 
             
-@kingbot.on_message(filters.command("wtf",vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("wtf",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def gagahkah(_,message):
     if message.forward_from:
         return
@@ -143,7 +143,7 @@ async def gagahkah(_,message):
             await asyncio.sleep(animation_interval)
             await message.edit(animation_chars[i % 5 ])           
             
-@kingbot.on_message(filters.command("ding",vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("ding",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def gkahgagw(_ , message):
     animation_interval = 0.3
     animation_ttl = range(0, 30)  
@@ -169,7 +169,7 @@ async def gkahgagw(_ , message):
         await asyncio.sleep(animation_interval)
         await message.edit(animation_chars[i % 10])
        
-@kingbot.on_message(filters.command("hypo",vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("hypo",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def okihakga(_ , message):
     if message.forward_from:
         return
@@ -198,7 +198,7 @@ async def okihakga(_ , message):
             await asyncio.sleep(animation_interval)
             await message.edit(animation_chars[i % 15])
 				
-@kingbot.on_message(filters.command("gangsta",vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("gangsta",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def gajjajay(_, message):
         await message.edit("EVERyBOdy")
         await asyncio.sleep(0.3)
@@ -216,7 +216,7 @@ async def gajjajay(_, message):
         await asyncio.sleep(0.3)
         await message.edit("EVERyBOdy iZ GangSTur UNtIL I ArRivE 🔥🔥🔥")		
 
-@kingbot.on_message(filters.command("charging",vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("charging",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def timer_blankx(_ , message):
  txt=message.text[10:] + '\n\n`Tesla Wireless Charging (beta) Started...\nDevice Detected: Nokia 1100\nBattery Percentage:` '
  j=10
