@@ -1,7 +1,7 @@
 from pyrogram import client, filters
 import asyncio
 import time
-from kingbot import edrep, kingbot , Adminsettings
+from RaiChUB import edrep, RaiChUB , Adminsettings
 
 __MODULE__ = "chat link"
 __HELP__ = """
@@ -13,7 +13,7 @@ HNDLR="."
 AdminSettings= [1359459092]
 
 
-@kingbot.on_message(filters.command("invitelink",HNDLR) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("invitelink",HNDLR) & filters.user(Adminsettings))
 async def invite_link(client, message):
     if message.chat.type in ["group", "supergroup"]:
         chat_name = message.chat.title
