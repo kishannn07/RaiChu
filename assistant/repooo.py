@@ -6,8 +6,9 @@ __HELP__ = """**This command helps you to Repo**
 -> `repo`
 """
 
+HNDLR="."
 
-@RaiChUB.on_message(filters.user(Adminsettings) & filters.command("repo", vr.get("HNDLR")))
+@RaiChUB.on_message(filters.user(Adminsettings) & filters.command("repo",HNDLR))
 async def hikjbhgakd(_, message):
   booet= await setbot.get_me()
   res=await RaiChUB.get_inline_bot_results(booet.username, "repo")
