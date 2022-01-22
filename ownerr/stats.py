@@ -1,12 +1,12 @@
 from datetime import datetime
-from kingbot import kingbot, setbot , vr, Adminsettings
+from RaiChUB import RaiChUB, setbot , vr, Adminsettings
 from pyrogram import filters
 from pyrogram.types import Message
 __MODULE__ = "Stats"
 __HELP__="""
 `stats` gives you your current stats i.e. Your group , channel , adminship and bot count
 """
-@kingbot.on_message(filters.command("stats",vr.get("HNDLR"))  & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("stats",vr.get("HNDLR"))  & filters.user(Adminsettings))
 async def stats(_, message):
     await message.edit_text("Collecting stats")
     start = datetime.now()
