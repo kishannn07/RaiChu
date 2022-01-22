@@ -24,7 +24,7 @@ async def purgeme(client , message):
             while number > 0:
                 try:
                     print(msg_id)
-                    if RaiChUB.get_messages(chat_id , msg_id).from_user.id == kingbot.get_users("me").id:
+                    if RaiChUB.get_messages(chat_id , msg_id).from_user.id == RaiChUB.get_users("me").id:
                         await RaiChUB.delete_messages(chat_id , msg_id)
                         print("Heyyy")
                         number=number-1
