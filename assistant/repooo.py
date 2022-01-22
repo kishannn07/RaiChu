@@ -1,5 +1,5 @@
 from pyrogram import filters 
-from kingbot import kingbot, setbot , vr, Adminsettings
+from RaiChUB import RaiChUB, setbot , vr, Adminsettings
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultArticle,InputTextMessageContent
 __MODULE__ = "Repo"
 __HELP__ = """**This command helps you to Repo**
@@ -7,7 +7,7 @@ __HELP__ = """**This command helps you to Repo**
 """
 
 
-@kingbot.on_message(filters.user(Adminsettings) & filters.command("repo", vr.get("HNDLR")))
+@RaiChUB.on_message(filters.user(Adminsettings) & filters.command("repo", vr.get("HNDLR")))
 async def hikjbhgakd(_, message):
   booet= await setbot.get_me()
   res=await kingbot.get_inline_bot_results(booet.username, "repo")
@@ -20,13 +20,13 @@ async def ibnrp(_ , inline_query):
                   [  [
                         InlineKeyboardButton(
                             "🔥Repo",
-                            url= "https://github.com/ToxicCybers/kinguserbot"
+                            url= "https://github.com/ProXSammY/RaiChu"
                         )
                       ]])
   await inline_query.answer(
         results=[
             InlineQueryResultArticle(
-                title="Feel like a king",
+                title="Feel like a RaiChu",
                 input_message_content=stosen,
                 thumb_url="https://telegra.ph/file/d19f785fb32bf4eaa62fd.jpg",
                 reply_markup=keboard,
