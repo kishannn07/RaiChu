@@ -17,7 +17,7 @@ async def in_h_lp(_ , inline_query):
     hno = ser.HC
     lengt = len(hno)
     stosen = InputTextMessageContent(
-        message_text=f"You are accessing help for **King Userbot** \n __Everyone is a king. Until the real king arrives.__ \n\n ♕𝚃𝚘𝚝𝚊𝚕 𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜♛= {𝚕𝚎𝚗𝚐𝚝}")
+        message_text=f"You are accessing help for **Raichu Userbot** \n __Powered By:- @TeamRaichu__ \n\n ♕𝚃𝚘𝚝𝚊𝚕 𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜♛= {𝚕𝚎𝚗𝚐𝚝}")
     keboard = InlineKeyboardMarkup(
         [[
             InlineKeyboardButton(
@@ -46,7 +46,7 @@ async def in_h_lp(_ , inline_query):
                 )], [
             InlineKeyboardButton(
                 "Support",
-                url="https://t.me/Tc_Bots"
+                url="https://t.me/RaichuOfficial"
             )]])
     await inline_query.answer(
         results=[
@@ -166,7 +166,7 @@ async def cbire(_ , cbq: CallbackQuery):
                 )], [
             InlineKeyboardButton(
                 "Support",
-                url="https://t.me/Tc_Bots"
+                url="https://t.me/RaichuOfficial"
             )]]
         await cbq.edit_message_caption(
                             caption=f"You are accessing help for **King Userbot** \n __Everyone is a king. Until the real king arrives.__",
@@ -243,10 +243,10 @@ async def cbire(_ , cbq: CallbackQuery):
                 )], [
             InlineKeyboardButton(
                 "Support",
-                url="https://t.me/Tc_Bots"
+                url="https://t.me/RaichuOfficial"
             )]]
         await cbq.edit_message_caption(
-                            caption=f"You are accessing help for **King Userbot** \n __Everyone is a king. Until the real king arrives.__",
+                            caption=f"You are accessing help for **Raichu UserBot**\n__Powered By :- @TeamRaichu__",
                             )
         await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
    await cbq.answer()
