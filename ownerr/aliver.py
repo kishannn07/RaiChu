@@ -1,6 +1,6 @@
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from RaiChUB import setbot, Adminsettings, kingbot, START_TIME , vr, vcbot
+from RaiChUB import setbot, Adminsettings, RaiChUB, START_TIME , vr, vcbot
 from datetime import datetime
 import time
 __MODULE__ = "alive"
