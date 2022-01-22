@@ -6,7 +6,7 @@ import heroku3
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 from uti.confi import Var
-from kingbot import kingbot ,vr,Adminsettings
+from RaiChUB import RaiChUB ,vr,Adminsettings
 from pyrogram import client, filters
 
 __MODULE__ = "UPDATE"
@@ -44,13 +44,13 @@ def fetch_heroku_git_url(api_key, app_name):
         return None
     return heroku_app.git_url.replace("https://", "https://api:" + api_key + "@")
 
-@kingbot.on_message(filters.command("update",vr.get("HNDLR")) & filters.user(Adminsettings))  
+@RaiChUB.on_message(filters.command("update",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def update(_, message):
     HEROKU_APP_NAME=Var.HEROKU_APP_NAME
     HEROKU_API=Var.HEROKU_API
 
     REPO_ = environ.get(
-    "UPSTREAM_REPO", "https://github.com/ToxicCybers/kinguserbot"
+    "UPSTREAM_REPO", "https://github.com/ProXSammY/RaiChu"
     )
 
     U_BRANCH = "main"
@@ -62,7 +62,7 @@ async def update(_, message):
         repo = Repo()
     except GitCommandError:
         return await msg_.edit(
-            "`Invalid Git Command. Please Report This Bug To @KingUserBots`"
+            "`Invalid Git Command. Please Report This Bug To @RaiChuOfficial`"
         )
     except InvalidGitRepositoryError:
         repo = Repo.init()
@@ -87,7 +87,7 @@ async def update(_, message):
             repo.git.reset("--hard", "FETCH_HEAD")
         await runcmd("pip3 install --no-cache-dir -r requirements.txt")
         await msg_.edit("`Updated Sucessfully! Give Me A min To Restart!`")
-        args = [sys.executable, "-m", "kingbot"]
+        args = [sys.executable, "-m", "RaiChUB"]
         execle(sys.executable, *args, environ)
         exit()
         return
