@@ -41,9 +41,9 @@ class Var(object):
     REDIS_URI = config("REDIS_URI", default=None)
     REDIS_PASSWORD = config("REDIS_PASSWORD", default=None)
     UPSTREAM_REPO = os.environ.get(
-        "UPSTREAM_REPO", "https://github.com/ToxicCybers/kinguserbot"
+        "UPSTREAM_REPO", "https://github.com/ProXSammY/RaiChUB"
     )
-    U_BRANCH = "ToxicCyber"
+    U_BRANCH = "RaiChu"
     if HEROKU_API and HEROKU_APP_NAME:
         HEROKU_URL = fetch_heroku_git_url(HEROKU_API, HEROKU_APP_NAME)
     else:
