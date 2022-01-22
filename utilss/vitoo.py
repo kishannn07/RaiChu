@@ -4,7 +4,7 @@ import asyncio
 import shlex
 import sys
 from pyrogram import filters
-from RaiChUB import RaiChUb , vr , Adminsettings
+from RaiChUB import RaiChUB , vr , Adminsettings
 from pymediainfo import MediaInfo
 from typing import Tuple
 __MODULE__ = "Convert"
