@@ -1,4 +1,4 @@
-from kingbot import kingbot, vr, Adminsettings
+from RaiChUB import RaiChUB, vr, Adminsettings
 from pyrogram import filters
 
 PRINTABLE_ASCII = range(0x21, 0x7f)
@@ -18,7 +18,7 @@ def aesthetify(string):
         yield chr(c)
 
 
-@kingbot.on_message(filters.command("ae",vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("ae",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def porari(_, message):
     text = message.text
     text = text.split(" ",1)[1]
