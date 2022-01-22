@@ -5,7 +5,7 @@ import os
 import time
 from youtube_dl import YoutubeDL
 from youtubesearchpython import SearchVideos
-from kingbot import kingbot, vr , setbot, Adminsettings
+from RaiChUB import RaiChUB, vr , setbot, Adminsettings
 from pyrogram import Client, filters
 from pyrogram.errors import PeerIdInvalid
 from pyrogram.types import Message
@@ -20,7 +20,7 @@ __**This command helps you to download and send songs to a chat**__
 -> `song name`
 """
 
-@kingbot.on_message(filters.command("song", vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("song", vr.get("HNDLR")) & filters.user(Adminsettings))
 async def song(client, message):
     input_str = get_text(message)
     rep= await message.edit_text(f"`Processing...`")
@@ -83,7 +83,7 @@ async def song(client, message):
             
 	
 	
-@kingbot.on_message(filters.command("saavan", vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("saavan", vr.get("HNDLR")) & filters.user(Adminsettings))
 async def savnana(client, message):
     song = get_text(message)
     if not song:
@@ -109,7 +109,7 @@ async def savnana(client, message):
     os.remove(title + ".mp3")
     os.remove(title + ".jpg")
 
-@kingbot.on_message(filters.command("deezee", vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("deezee", vr.get("HNDLR")) & filters.user(Adminsettings))
 async def deezergeter(client, message):
     rep = await message.edit_text("`Searching For Song On Deezer.....`")
     sgname = get_text(message)
