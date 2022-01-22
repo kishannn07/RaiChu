@@ -2,7 +2,7 @@ from pyrogram import client, filters
 import asyncio
 import time
 from pyrogram.types import ChatPermissions
-from kingbot import kingbot, vr ,Adminsettings
+from RaiChUB import RaiChUB, vr ,Adminsettings
 __MODULE__ = "GOOGLE SEARCH"
 __HELP__ = """
 __**This command helps you to get to 10 results from google**__
@@ -28,7 +28,7 @@ def googlesearch(query):
         co=co+1
     return returnquery
 
-@kingbot.on_message(filters.command("gs",vr.get("HNDLR")) & filters.user(Adminsettings))  
+@RaiChUB.on_message(filters.command("gs",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def gs(_, message):
 
     msg_txt=message.text 
