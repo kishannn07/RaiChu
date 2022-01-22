@@ -10,7 +10,7 @@ from pyrogram.errors import (
     FloodWait,
 )
 from pyrogram.types import ChatPermissions
-from kingbot import kingbot, vr ,Adminsettings
+from RaiChUB import RaiChUB, vr ,Adminsettings
 __MODULE__ = "demote"
 __HELP__ = """
 __**This command helps you to instantly demote someone in the chat**__
@@ -18,7 +18,7 @@ __**This command helps you to instantly demote someone in the chat**__
 -> `demote`
 """
 
-@kingbot.on_message(filters.group & filters.command("demote",vr.get("HNDLR")) & filters.user(Adminsettings))  
+@RaiChUB.on_message(filters.group & filters.command("demote",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def demote(_, message):
   if message.chat.type in ["group", "supergroup"]:
     cmd = message.command
