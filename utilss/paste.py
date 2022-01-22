@@ -4,7 +4,7 @@ import time
 import os
 import requests
 from pyrogram.types import ChatPermissions , Message
-from kingbot import kingbot, vr ,Adminsettings
+from RaiChUB import RaiChUB, vr ,Adminsettings
 __MODULE__ = "paste"
 __HELP__ = """
 __**This command helps you to paste a text to nekobin.com and return a shareable url**__
@@ -23,7 +23,7 @@ def get_text(message: Message) -> [None, str]:
             return None
     else:
         return None
-@kingbot.on_message(filters.command("paste",vr.get("HNDLR")) & filters.user(Adminsettings))  
+@RaiChUB.on_message(filters.command("paste",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def paste(client,message):
     rep = await message.edit_text("`Please Wait.....`")
     tex_t = get_text(message)
