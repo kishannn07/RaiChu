@@ -70,7 +70,7 @@ async def pijtkiau(_ , message):
             reply_to_message_id=message.reply_to_message.message_id,
         )
     else:
-        await kingbot.send_document(
+        await RaiChUB.send_document(
             message.chat.id, srt_file_name, caption=f">> {file_name} <<"
         )
     await msg_.delete()
