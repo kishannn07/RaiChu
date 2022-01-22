@@ -2,7 +2,7 @@ import os
 from telegraph import upload_file
 
 from pyrogram import filters
-from kingbot import kingbot, edrep, vr , Adminsettings
+from RaiChUB import RaiChUB, edrep, vr , Adminsettings
 
 __MODULE__ = "Telegra.ph"
 __HELP__ = """
@@ -13,7 +13,7 @@ Reply to Media as args to upload it to telegraph.
 - Supported Media Types (.jpg, .jpeg, .png, .gif, .mp4 )
 """
 
-@kingbot.on_message(filters.user(Adminsettings) & filters.command("telegraph",vr.get("HNDLR")))
+@RaiChUB.on_message(filters.user(Adminsettings) & filters.command("telegraph",vr.get("HNDLR")))
 async def telegraph(client, message):
     replied = message.reply_to_message
     if not replied:
@@ -43,7 +43,7 @@ async def telegraph(client, message):
     try:
         response = upload_file(download_location)
     except Exception as document:
-        await kingbot.send_message(message.chat.id, document)
+        await RaiChUB.send_message(message.chat.id, document)
     else:
         await message.reply_text(
             f"**Document passed to: [Telegra.ph](https://telegra.ph{response[0]})**",
