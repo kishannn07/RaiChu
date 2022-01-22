@@ -2,7 +2,7 @@ from pyrogram import client, filters
 import asyncio
 import time
 from pyrogram.types import ChatPermissions
-from kingbot import kingbot, vr ,Adminsettings
+from RaiChUB import RaiChUB, vr ,Adminsettings
 __MODULE__ = "mute"
 __HELP__ = """
 __**This command helps you to mute a user in the chat**__
@@ -23,7 +23,7 @@ mute_permission = ChatPermissions(
     can_pin_messages=False,
 )
 
-@kingbot.on_message(filters.command("mute",vr.get("HNDLR")) & filters.user(Adminsettings))  
+@RaiChUB.on_message(filters.command("mute",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def mute(client, message):
     if message.chat.type in ["group", "supergroup"]:
         me_m =await client.get_me()
