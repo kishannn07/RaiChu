@@ -1,5 +1,5 @@
 from pyrogram import filters, Client
-from RaiChUB import kingbot, Adminsettings,vr, starttimer
+from RaiChUB import RaiChUB, Adminsettings,vr, starttimer
 from datetime import datetime
 
 __MODULE__ = "PING"
