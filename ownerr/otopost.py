@@ -1,5 +1,5 @@
 from pyrogram import filters
-from kingbot import kingbot, setbot , vr, Adminsettings
+from RaiChUB import RaiChUB, setbot , vr, Adminsettings
 from pyrogram import filters 
 from sql_helper.autopostingdb import (
     add_new_autopost,
@@ -12,7 +12,7 @@ __HELP__ = """**This command helps you to Auto post**
 -> `autopost` `rmapst`
 """
 
-@kingbot.on_message(filters.command("autopost", vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("autopost", vr.get("HNDLR")) & filters.user(Adminsettings))
 async def autopost(client, message):
     senr = await message.edit_text("`Processing..`")
     chnnl = get_text(message)
@@ -37,7 +37,7 @@ async def autopost(client, message):
     await senr.edit(f"`Added AutoPosting To This Channel From {chnnl}`")
 
 
-@kingbot.on_message(filters.command("rmapst", vr.get("HNDLR")) & filters.user(Adminsettings))
+@RaiChUB.on_message(filters.command("rmapst", vr.get("HNDLR")) & filters.user(Adminsettings))
 async def rmautopost(client, message):
     cenr = await message.edit_text("`Processing..`")
     chnnl = get_text(message)
@@ -62,7 +62,7 @@ async def rmautopost(client, message):
     await cenr.edit(f"`Removed AutoPosting To This Channel From {chnnl}`")
 
 
-@kingbot.on_message(
+@RaiChUB.on_message(
     (filters.incoming | filters.outgoing)
     & filters.channel
     & ~filters.edited
