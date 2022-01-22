@@ -2,7 +2,7 @@ from pyrogram import client, filters
 import asyncio
 import time
 from pyrogram.types import ChatPermissions
-from kingbot import kingbot, vr ,Adminsettings
+from RaiChUB import RaiChUB, vr ,Adminsettings
 __MODULE__ = "ban"
 __HELP__ = """
 __**This command helps you to instantly ban a user in the chat**__
@@ -10,7 +10,7 @@ __**This command helps you to instantly ban a user in the chat**__
 -> `ban`
 """
 
-@kingbot.on_message(filters.group & filters.command("ban",vr.get("HNDLR")) & filters.user(Adminsettings))  
+@RaiChUB.on_message(filters.group & filters.command("ban",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def member_ban(client , message):
     if message.chat.type in ["group", "supergroup"]:
         chat_id = message.chat.id
