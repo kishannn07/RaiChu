@@ -39,4 +39,4 @@ async def member_unban(_ , message):
             await RaiChUB.edit_message_text(chat_id , msg_id , reply_string)
     else:
         reply_string="Noob,you can't unban members 😂 !"
-        await kingbot.edit_message_text(chat_id , msg_id , reply_string )
+        await RaiChUB.edit_message_text(chat_id , msg_id , reply_string )
