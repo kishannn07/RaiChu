@@ -3,7 +3,7 @@ import asyncio
 import time
 from googlesearch import search
 from pyrogram.types import ChatPermissions
-from kingbot import kingbot, vr ,Adminsettings
+from RaiChUB import RaiChUB, vr ,Adminsettings
 __MODULE__ = "ytlink"
 __HELP__ = """
 __**This command helps you to get youtube link**__
@@ -11,7 +11,7 @@ __**This command helps you to get youtube link**__
 -> `ytlink`
 """
 
-@kingbot.on_message(filters.command("ytlink",vr.get("HNDLR")) & filters.user(Adminsettings))  
+@RaiChUB.on_message(filters.command("ytlink",vr.get("HNDLR")) & filters.user(Adminsettings))  
 def youtube_link(_,message):
     msg_txt=message.text
     if " " in msg_txt:
